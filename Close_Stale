@@ -1,0 +1,15 @@
+# .github/workflows/stale.yml
+name: Close stale issues
+on:
+ schedule:
+ - cron: "0 0 * * *"
+jobs:
+ stale:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/stale@v8
+ with:
+ days-before-stale: 7
+ days-before-close: 3
+ stale-issue-message: "Esta issue está inativa há 7 dias."
+ close-issue-message: "Issue fechada automaticamente por inatividade."
